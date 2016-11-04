@@ -1,0 +1,4 @@
+services:
+    api:
+        class: Api\Api
+        arguments: [%apiUrl%,apiKey%]

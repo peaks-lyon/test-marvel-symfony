@@ -1,0 +1,7 @@
+services:
+    api:
+        class: ApiBundle\Classes\Api
+        arguments:
+        - "%api.url%"
+        - "%api.privateKey%"
+        - "%api.publicKey%"
