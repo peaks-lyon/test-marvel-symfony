@@ -9,13 +9,13 @@
 			</tr>
 		</thead>
 		<tbody>
-		{#{% for character in characters %}
+		{% for character in characters %}
 				<tr>
 
 					<td>{{ character.name }}</td>
 					<td><img style="width:75px" src="{{ character.thumbnail.path}}.{{ character.thumbnail.extension}}" /></td>
 				</tr>
-				{% endfor %}#}
+				{% endfor %}
 		</tbody>
 	</table>
 	
