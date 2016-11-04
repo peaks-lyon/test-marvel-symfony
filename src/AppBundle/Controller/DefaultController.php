@@ -17,7 +17,7 @@ class DefaultController extends Controller
         $api = $this->container->get('api');
         $characters = $api->call('public/characters',['offset' => 100, 'limit' => 22]);
 
-        return $this->render('AppBundle:charactersList.html.twig', [
+        return $this->render('AppBundle::charactersList.html.twig', [
             'characters' => $characters->data->results //['data']['results']
         ]);
     }
