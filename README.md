@@ -6,8 +6,9 @@ Prérequis
 - Les modules PHP suivant doivent être installés : JSON, ctype
 - php.ini : la directive date.timezone doit être définie
 - Composer (https://getcomposer.org/composer.phar)
+- Un compte sur developer.marvel.com
 
-Vous pouvez vérifier votre installation en vous rendant sur : http://votre-serveur/votre-appli/web/config.php
+Vous pouvez vérifier votre installation serveur web+php en vous rendant sur : http://votre-serveur/votre-appli/web/config.php
 
 Installation
 -----------------------
@@ -20,3 +21,5 @@ ou si vous utilisez le PHAR
 ````
 php composer.phar install
 ```
+- Renseigner la clé privée et public de votre compte Marvel dans app/config/config.yml 
+- Go http://votre-serveur/votre-appli/web/
