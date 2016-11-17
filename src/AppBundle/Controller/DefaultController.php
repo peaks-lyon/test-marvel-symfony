@@ -15,11 +15,21 @@ class DefaultController extends Controller
      */
     public function indexAction(Request $request, $page = 1)
     {
+        $limit = 22;
         $api = $this->container->get('api');
-        $characters = $api->call('public/characters',['offset' => 100+($page*22), 'limit' => 22]);
-
+        $characters = $api->call('public/characters',['offset' => 100+($page*22), 'limit' => $limit]);
+        if (count($characters) == $limit)
+        {
+          $hasNext = true;  
+        }
+        else
+        {
+            $hasNext = false;
+        }
         return $this->render('AppBundle::charactersList.html.twig', [
-            'characters' => $characters->data->results //['data']['results']
+            'characters' => $characters->data->results,
+            'hasNext' => $hasNext,
+            'currentPage' => $page
         ]);
     }
 }
