@@ -18,17 +18,18 @@ class DefaultController extends Controller
         $limit = 22;
         $api = $this->container->get('api');
         $characters = $api->call('public/characters',['offset' => 100+($page*22), 'limit' => $limit]);
-        if (count($characters) == $limit)
+
+	if (count($characters->data->results) == $limit)
         {
-          $hasNext = true;  
+          $hasNextPage = true;  
         }
         else
         {
-            $hasNext = false;
+            $hasNextPage = false;
         }
         return $this->render('AppBundle::charactersList.html.twig', [
             'characters' => $characters->data->results,
-            'hasNext' => $hasNext,
+            'hasNextPage' => $hasNextPage,
             'currentPage' => $page
         ]);
     }

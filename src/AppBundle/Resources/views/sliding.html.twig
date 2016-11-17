@@ -1,14 +1,16 @@
-{% if currentPage > 1}
-<div class="col-sm-2">
-	<a href="{{ path(homepage_page, {'page' : currentPage-1}) }}">Previous</a>
+<div class="row">
+{% if currentPage > 1 %}
+<div class="col-sm-2 col">
+	<a href="{{ path('homepage_page', {'page' : currentPage-1}) }}">Previous</a>
 </div>
 {% endif %}
-
-<div class="col-sm-3">
+<div class="col-sm-3 col">
 	<p>Page : {{ currentPage}}</p>
 </div>
 
 {% if hasNextPage %}
-<div class="col-sm-2">
-	<a href="{{ path(homepage_page, {'page' : currentPage+1}) }}">Previous</a>
+<div class="col-sm-2 col">
+	<a href="{{ path('homepage_page', {'page' : currentPage+1}) }}">Next</a>
+</div>
+{% endif %}
 </div>
