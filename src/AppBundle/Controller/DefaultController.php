@@ -11,11 +11,12 @@ class DefaultController extends Controller
 {
     /**
      * @Route("/", name="homepage")
+     * @Route("/:page", name="homepage_page")
      */
-    public function indexAction(Request $request)
+    public function indexAction(Request $request, $page = 1)
     {
         $api = $this->container->get('api');
-        $characters = $api->call('public/characters',['offset' => 100, 'limit' => 22]);
+        $characters = $api->call('public/characters',['offset' => 100+($page*22), 'limit' => 22]);
 
         return $this->render('AppBundle::charactersList.html.twig', [
             'characters' => $characters->data->results //['data']['results']
