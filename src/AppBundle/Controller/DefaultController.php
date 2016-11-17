@@ -11,7 +11,7 @@ class DefaultController extends Controller
 {
     /**
      * @Route("/", name="homepage")
-     * @Route("/:page", name="homepage_page")
+     * @Route("/{page}", name="homepage_page")
      */
     public function indexAction(Request $request, $page = 1)
     {
